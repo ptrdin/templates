@@ -11,8 +11,12 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
 			"image": "registry:latest",
-			"ports": [
-				"5000/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "5000"
+				}
 			],
 			"volumes": [
 				{
@@ -56,9 +60,12 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
 			"image": "nginx:latest",
-			"ports": [
-				"80/tcp",
-				"443/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "80"
+				}
 			],
 			"volumes": [
 				{
@@ -79,8 +86,12 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/httpd.png",
 			"image": "httpd:latest",
-			"ports": [
-				"80/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "80"
+				}
 			],
 			"volumes": [
 				{
@@ -98,8 +109,12 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/caddy.png",
 			"image": "caddy:latest",
-			"ports": [
-				"80/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "80"
+				}
 			],
 			"volumes": [
 				{
@@ -263,9 +278,14 @@
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/gitlab_ce.png",
 			"image": "gitlab/gitlab-ce:latest",
 			"ports": [
-				"80/tcp",
-				"443/tcp",
 				"22/tcp"
+			],
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "80"
+				}
 			],
 			"volumes": [
 				{
@@ -532,8 +552,12 @@
 					"label": "Database password"
 				}
 			],
-			"ports": [
-				"80/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "80"
+				}
 			],
 			"volumes": [
 				{
@@ -551,8 +575,12 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/drupal.png",
 			"image": "drupal:latest",
-			"ports": [
-				"80/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "80"
+				}
 			],
 			"volumes": [
 				{
@@ -571,8 +599,12 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/plone.png",
 			"image": "plone:latest",
-			"ports": [
-				"8080/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "8080"
+				}
 			],
 			"volumes": [
 				{
@@ -665,8 +697,12 @@
 					"label": "Database password"
 				}
 			],
-			"ports": [
-				"80/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "80"
+				}
 			],
 			"volumes": [
 				{
@@ -685,8 +721,14 @@
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/jenkins.png",
 			"image": "jenkins/jenkins:lts-jdk11",
 			"ports": [
-				"8080/tcp",
 				"50000/tcp"
+			],
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "8080"
+				}
 			],
 			"volumes": [
 				{
@@ -705,8 +747,12 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/redmine.png",
 			"image": "redmine:latest",
-			"ports": [
-				"3000/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "3000"
+				}
 			],
 			"volumes": [
 				{
@@ -726,8 +772,12 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/filebrowser.png",
 			"image": "filebrowser/filebrowser:latest",
-			"ports": [
-				"80/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "80"
+				}
 			],
 			"volumes": [
 				{
@@ -756,9 +806,12 @@
 					"preset": true
 				}
 			],
-			"ports": [
-				"8080/tcp",
-				"8443/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "8080"
+				}
 			]
 		},
 		{
@@ -788,9 +841,12 @@
 					"preset": true
 				}
 			],
-			"ports": [
-				"8080/tcp",
-				"8443/tcp"
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "80"
+				}
 			],
 			"volumes": [
 				{
@@ -1067,6 +1123,24 @@
 					"label": "The Top level domain to add container proxying to",
 					"description": "top level DNS that containers will get added to either using *.DOMAIN, or DOMAIN/path, or a mixture.",
 					"default": "loc.alho.st"
+				}
+			]
+		},
+		{
+			"type": 1,
+			"title": "Web Echo",
+			"description": "Echo back the browser's request",
+			"categories": [
+				"docker"
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/caddy.png",
+			"image": "svendowideit/echo:latest",
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "80"
 				}
 			]
 		}
