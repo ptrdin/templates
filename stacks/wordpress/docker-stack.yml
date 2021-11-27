@@ -14,8 +14,10 @@ services:
 
    wordpress:
      image: wordpress:latest
-     ports:
-       - 80
+     networks:
+     - caddy_proxy
+     labels:
+     - "virtual.port: 80"
      restart: always
      environment:
        WORDPRESS_DB_HOST: db:3306
@@ -24,3 +26,8 @@ services:
 
 volumes:
     db_data:
+
+networks:
+  caddy_proxy:
+    attachable: true
+    name: caddy_proxy
