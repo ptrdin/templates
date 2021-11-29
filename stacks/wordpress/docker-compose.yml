@@ -17,7 +17,7 @@ services:
     networks:
       - caddy_proxy
     labels:
-      - "virtual.port: 80"
+      virtual.port: "80"
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
