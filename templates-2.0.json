@@ -929,7 +929,7 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
 			"repository": {
-				"url": "https://github.com/portainer/templates",
+				"url": "https://github.com/ptrdin/templates",
 				"stackfile": "stacks/wordpress/docker-stack.yml"
 			},
 			"env": [
@@ -973,7 +973,7 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
 			"repository": {
-				"url": "https://github.com/portainer/templates",
+				"url": "https://github.com/ptrdin/templates",
 				"stackfile": "stacks/openamt/docker-compose.yml"
 			},
 			"env": [
@@ -1020,7 +1020,7 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/microsoft.png",
 			"repository": {
-				"url": "https://github.com/portainer/templates",
+				"url": "https://github.com/ptrdin/templates",
 				"stackfile": "stacks/microsoft-oms/docker-stack.yml"
 			},
 			"env": [
@@ -1086,14 +1086,14 @@
 			"title": "Wordpress",
 			"description": "Wordpress setup with a MySQL database",
 			"note": "Deploys a Wordpress instance connected to a MySQL database.",
-			"stackfile": "https://raw.githubusercontent.com/portainer/templates/master/stacks/wordpress/edge/docker-stack.yml"
+			"stackfile": "https://raw.githubusercontent.com/ptrdin/templates/master/stacks/wordpress/edge/docker-stack.yml"
 		},
 		{
 			"type": 4,
 			"title": "CockroachDB",
 			"description": "CockroachDB cluster",
 			"note": "Deploys an insecure CockroachDB cluster, please refer to <a href=\"https://www.cockroachlabs.com/docs/stable/orchestrate-cockroachdb-with-docker-swarm.html\" target=\"_blank\">CockroachDB documentation</a> for production deployments.",
-			"stackfile": "https://raw.githubusercontent.com/portainer/templates/master/stacks/cockroachdb/edge/docker-stack.yml"
+			"stackfile": "https://raw.githubusercontent.com/ptrdin/templates/master/stacks/cockroachdb/edge/docker-stack.yml"
 		},
 		{
 			"type": 3,
@@ -1101,7 +1101,7 @@
 			"description": "FDO",
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
-			"stackfile": "https://raw.githubusercontent.com/portainer/templates/master/stacks/fdo/docker-stack.yml"
+			"stackfile": "https://raw.githubusercontent.com/ptrdin/templates/master/stacks/fdo/docker-stack.yml"
 		},
 		{
 			"type": 3,
