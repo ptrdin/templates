@@ -29,6 +29,5 @@ volumes:
 
 networks:
   caddy_proxy:
-    attachable: true
     name: caddy_proxy
     external: true
