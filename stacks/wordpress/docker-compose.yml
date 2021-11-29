@@ -3,6 +3,8 @@ version: '2'
 services:
   db:
     image: mysql:5.7
+    networks:
+      - db_net
     volumes:
       - db_data:/var/lib/mysql
     restart: always
@@ -15,6 +17,7 @@ services:
   wordpress:
     image: wordpress:latest
     networks:
+      - dn_net
       - caddy_proxy
     labels:
       virtual.port: "80"
@@ -30,3 +33,4 @@ volumes:
 networks:
   caddy_proxy:
     external: true
+  db_net: null
