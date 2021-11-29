@@ -17,7 +17,7 @@ services:
   wordpress:
     image: wordpress:latest
     networks:
-      - dn_net
+      - db_net
       - caddy_proxy
     labels:
       virtual.port: "80"
