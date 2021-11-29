@@ -1143,6 +1143,30 @@
 					"value": "80"
 				}
 			]
+		},
+		{
+			"type": 1,
+			"title": "VaultWarden",
+			"description": "VaultWarden (Rust opensource implementation of the Bitwarden API)",
+			"note": "https://github.com/dani-garcia/vaultwarden",
+			"categories": [
+				"docker"
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+			"image": "vaultwarden/server:latest",
+			"network": "caddy_proxy",
+			"labels": [
+				{
+					"name": "virtual.port",
+					"value": "80"
+				}
+			],
+			"volumes": [
+				{
+					"container": "/data/"
+				}
+			]
 		}
 	]
 }
