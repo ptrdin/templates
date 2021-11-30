@@ -3,6 +3,7 @@ version: "2"
 services:
   proxy:
     image: ptrdin/caddy:latest
+    restart: always
     ports:
       - 80:80
       - 443:443
